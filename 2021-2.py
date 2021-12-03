@@ -3,28 +3,28 @@ input = open("input-2021-2.txt", "r")
 
 input = input.read().split("\n")
 input.remove("")
-print(input[0].split(" "))
+#print(input[0].split(" "))
 
 #PART-1
-# pos = 0
-# depth = 0
+pos = 0
+depth = 0
 
-# for instruction in input:
-#     parsed = instruction.split(" ")
-#     command = parsed[0]
-#     delta = parsed[1]
-#     if command == "forward":
-#         pos += int(delta)
-#     else:
-#         if command == "down":
-#             depth += int(delta)
-#         else:
-#             depth -= int(delta)
+for instruction in input:
+    parsed = instruction.split(" ")
+    command = parsed[0]
+    delta = parsed[1]
+    if command == "forward":
+        pos += int(delta)
+    else:
+        if command == "down":
+            depth += int(delta)
+        else:
+            depth -= int(delta)
 
-# print(pos)
-# print(depth)
-# multiplied = (pos*depth)
-# print(multiplied)
+#print(pos)
+#print(depth)
+multiplied = (pos*depth)
+print(multiplied)
 
 #PART-2
 pos = 0
@@ -44,7 +44,7 @@ for instruction in input:
         else:
             aim -= delta
 
-print(pos)
-print(depth)
+#print(pos)
+#print(depth)
 multiplied = (pos*depth)
 print(multiplied)
