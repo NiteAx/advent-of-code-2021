@@ -1,5 +1,8 @@
+import timeit
 input = open("input-2021-8.txt", "r")
 input = input.read().split("\n")
+
+starttime = timeit.default_timer()
 
 count = 0
 
@@ -12,6 +15,9 @@ for line in input:
             count+=1
 
 print(count)
+
+print("The time difference is :", timeit.default_timer() - starttime)
+starttime = timeit.default_timer()
 
 sum = 0
 i = 1
@@ -57,7 +63,7 @@ for line in input:
         for x in key:
             if set(key[x]) == set(digit):
                 num += x
-                
+
     #print("i: "+str(i))
     num = int(num)
     #print(num)
@@ -66,3 +72,5 @@ for line in input:
     i+=1
 
 print(sum)
+
+print("The time difference is :", timeit.default_timer() - starttime)
