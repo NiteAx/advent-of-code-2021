@@ -2,6 +2,8 @@ import timeit
 input = open("input-2021-9.txt", "r")
 input = input.read().split("\n")
 
+starttime = timeit.default_timer()
+
 input = [[int(x) for x in line] for line in input]
 risk = 0
 low_points = []
@@ -40,6 +42,8 @@ for row,line in enumerate(input):
         continue
     break
 print(risk)
+print("The time difference is :", timeit.default_timer() - starttime)
+starttime = timeit.default_timer()
 
 #PART-2
 
@@ -71,3 +75,4 @@ for point in low_points:
 basins.sort(reverse=True)
 mul = basins[0]*basins[1]*basins[2]
 print(mul)
+print("The time difference is :", timeit.default_timer() - starttime)
